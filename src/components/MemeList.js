@@ -24,7 +24,7 @@ const MemeCard = ({ meme, showDetail }) => {
     >
       <Card.Img
         variant="top"
-        src={`${process.env.REACT_APP_BACKEND_API}${
+        src={`${process.env.REACT_APP_BACKEND_API}/${
           meme.outputMemePath.split("public/")[1]
         }?${meme.updatedAt}`}
       />

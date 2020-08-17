@@ -18,7 +18,7 @@ const HomePage = () => {
     dispatch(memeActions.setSelectedMeme(meme));
   };
 
-  const handleSubmitImage = (params) => {
+  const handleSubmitImage = () => {
     dispatch(memeActions.createMemeRequest(selectedMeme.uploadedImage));
   };
 
@@ -89,5 +89,4 @@ const HomePage = () => {
     </Container>
   );
 };
-
 export default HomePage;

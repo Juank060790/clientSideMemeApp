@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import HomePage from "../HomePage";
 import NotFoundPage from "../../components/NotFoundPage";
 import NavbarHeader from "../NavbarHeader";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import SideMenu from "../SideMenu";
 import GalleryPage from "../GalleryPage";
 import AlertMsg from "../AlertMsg";
@@ -15,7 +15,7 @@ const Routes = () => {
       <Container fluid>
         <Row>
           <SideMenu />
-          <Col md={9} className="d-flex justify-content-center">
+          <Col md={9}>
             <AlertMsg />
             <Switch>
               <Route exact path="/" component={HomePage} />

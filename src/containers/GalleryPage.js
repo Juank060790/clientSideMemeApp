@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
+import PaginationMeme from "../components/PaginationMeme";
 import MemeList from "../components/MemeList";
-import PaginationMeme from "./PaginationMeme";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { ClipLoader } from "react-spinners";
 import { memeActions } from "../redux/actions";
-import ClipLoader from "react-spinners/ClipLoader";
 
 const GalleryPage = () => {
   const [pageNum, setPageNum] = useState(1);
@@ -12,14 +12,6 @@ const GalleryPage = () => {
   const loading = useSelector((state) => state.meme.loading);
   const totalPageNum = useSelector((state) => state.meme.totalPageNum);
   const memes = useSelector((state) => state.meme.memes);
-  //   const memes = [
-  //     { id: "1" },
-  //     { id: "2" },
-  //     { id: "3" },
-  //     { id: "4" },
-  //     { id: "5" },
-  //     { id: "6" },
-  //   ];
 
   useEffect(() => {
     dispatch(memeActions.memesRequest(pageNum));
@@ -29,7 +21,7 @@ const GalleryPage = () => {
 
   return (
     <Container className="p-2">
-      <Row>
+      <Row className="fill d-flex justify-content-center align-items-center">
         {loading ? (
           <ClipLoader color="#f86c6b" size={150} loading={loading} />
         ) : (
